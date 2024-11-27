@@ -1,0 +1,38 @@
+
+
+@media screen and (max-width: 1200px) {
+    main .pop-up {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    main .over-area {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    main .all-cards {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    main .all-cards {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    main .pop-up, main .mini-card, main .foot {
+        flex-direction: column;
+        text-align: center;
+    }
+    main .right-card img {
+        width: 100%;
+    }
+    main .over-area {
+        width: 90%;
+        height: 1000px;
+    }
+}
+
+
