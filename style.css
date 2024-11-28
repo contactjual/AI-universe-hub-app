@@ -64,12 +64,12 @@ main {
 
 
 /* add dynamicaly */
-body {
+/* body {
     pointer-events: none;
     user-select: none;
     overflow: hidden;
     scroll-behavior: smooth;
-}
+} */
 
 
 /* --------------------- pop-up--------------------------- */
