@@ -58,16 +58,33 @@ main .card .features {
 }
 
 
+main {
+    position: relative;
+}
+
+
+/* add dynamicaly */
+body {
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+
 /* --------------------- pop-up--------------------------- */
 main .over-area {
     width: 80%;
     height: 500px;
     max-width: 1000px;
-    display: flex;
-    /* display: none; */
     box-shadow: 10px 10px 100px gray, -10px -10px 100px gray;
     border-radius: 10px;
     background-color: white;
+
+
+    /* add dynamicaly */
+    display: flex;
+    display: none;
 
 
     position: absolute;
@@ -75,10 +92,10 @@ main .over-area {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 20;
 
 
 } 
+
 
 
 main .pops {
