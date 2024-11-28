@@ -6,7 +6,8 @@
         padding: 20px 0;
     }
     main .over-area {
-        height: auto;
+        height: 700px;
+        margin-top: 20px;
     }
 }
 
@@ -22,7 +23,7 @@
         display: grid;
         grid-template-columns: auto;
     }
-    main .pop-up, main .mini-card, main .foot {
+    main .pop-up, main .mini-card, main .pop-up .foot {
         flex-direction: column;
         text-align: center;
     }
@@ -31,8 +32,11 @@
     }
     main .over-area {
         width: 90%;
-        height: 1000px;
-        margin-top: 200px;
+        height: 1050px;
+        margin-top: 20px;
+    }
+    main .card .foot {
+        margin: auto;
     }
 }
 
