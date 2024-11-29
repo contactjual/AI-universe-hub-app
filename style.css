@@ -45,6 +45,10 @@ main .card {
     cursor: pointer;
 }
 
+main .card img {
+    width: 100%;
+}
+
 main .card .foot {
     margin: 0 0;
     display: flex;
@@ -127,6 +131,9 @@ main .right-card {
     border-radius: 10px;
     padding: 20px;
     text-align: center;
+}
+main .right-card img {
+    width: 100%;
 }
 
 main .mini-card {
