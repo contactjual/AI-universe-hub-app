@@ -46,7 +46,7 @@ main .card {
 }
 
 main .card .foot {
-    margin: 0 -79px;
+    margin: 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,12 +64,12 @@ main {
 
 
 /* add dynamicaly */
-/* body {
+.block {
     pointer-events: none;
     user-select: none;
     overflow: hidden;
     scroll-behavior: smooth;
-} */
+}
 
 
 /* --------------------- pop-up--------------------------- */
@@ -83,7 +83,7 @@ main .over-area {
 
 
     /* add dynamicaly */
-    display: flex;
+    /* display: flex; */
     display: none;
 
 

@@ -20,36 +20,20 @@
         <h1>AI Univers Hub</h1>
     </header>
     <main class="container">
-        <button>Short By Data</button>
-        <section class="all-cards" id="card-section">
+        <div  id="block-all">
+            <button>Short By Data</button>
+            <section    class="all-cards" id="card-section">
 
 
-            <!-- add card dynamicaly -->
-
-            <div class="card">
-                <div class="features">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_1j5EelHEOtoLagpQtbwPZdrztpEQL0sJLA&s"
-                        alt="">
-                    <h2>Features</h2>
-                    <p>1. Natural language processing</p>
-                    <p>2. Contextual understanding</p>
-                    <p>3. Text generation</p>
-                </div>
-                <hr>
-                <div class="foot">
-                    <div class="name-date">
-                        <h2>ChatGPT</h2>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span>11/01/2022</span>
-                    </div>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </div>
-            </div>
-        </section>
-        <button>See More</button>
+                <!-- add card dynamicaly -->
 
 
-        <section class="over-area">
+            </section>
+            <button>See More</button>
+        </div>
+
+
+        <section class="over-area" id="over-pop">
             <div class="pops">
                 <div class="pop-up">
                     <div class="left-card">
@@ -88,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <i class="fa-solid fa-xmark"></i>
+            <i onclick="closePopup()" class="fa-solid fa-xmark"></i>
 
         </section>
 
