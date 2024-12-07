@@ -6,7 +6,7 @@ const aiData = async () => {
     const array = Object.values(ai)
 
     // console.log(ai)
-    console.log(array)
+    // console.log(array)
 
     displayAiInfo(array);
 
@@ -30,7 +30,7 @@ const displayAiInfo = (array) => {
             const creatDiv = document.createElement('div');
 
             creatDiv.innerHTML = `
-                <div onclick="showPopup()"  class="card">
+                <div onclick="handlePopup('${singleAi.name}')"  class="card">
                     <div class="features">
                         <img src="${singleAi.image}"
                             alt="">
@@ -53,23 +53,33 @@ const displayAiInfo = (array) => {
 
             cardSection.appendChild(creatDiv);
 
-            showPopup(singleAi);
-
-
-            });
-
+            
+            // showPopup(singleAi);
+            
+        });
+        
     });
 }
 
-
+// console.log(singleAi)
 
 aiData();
 
 
+const handlePopup = async (id) => {
+
+    // const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/${id}`);
+    const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/01`);
+    const data = await res.json();
+    const PopAiData = data.data;
+
+    showPopup (PopAiData);
+}
+
 
 // show popup
 
-const showPopup = (singleAi) => {
+const showPopup = (PopAiData) => {
 
 
     // array.forEach(allAi => {
@@ -80,6 +90,8 @@ const showPopup = (singleAi) => {
     //     });
 
     // });
+
+    console.log(PopAiData);
 
 
     const overPop = document.getElementById('over-pop');
@@ -101,9 +113,9 @@ const showPopup = (singleAi) => {
                             <div class="left">
                                 <h3>Features</h3>
                                 <ul>
-                                    <li>Customizable responses</li>
-                                    <li>Multilingual support</li>
-                                    <li>Seamless integration</li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
                                 </ul>
                             </div>
                             <div class="right">
@@ -117,7 +129,7 @@ const showPopup = (singleAi) => {
                         </div>
                     </div>
                     <div class="right-card">
-                        <img src="${singleAi.image}" alt="">
+                        <img src="${PopAiData.image}" alt="">
                         <h2>Hi, how are you doing today?</h2>
                         <p>I'm doing well, thank you for asking. How can I assist you today?</p>
                     </div>
