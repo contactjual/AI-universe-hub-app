@@ -78,16 +78,6 @@ main {
 }
 
 
-/* add more  */
-
-/* Blurring the background and disabling other parts */
-body .blocked {
-    pointer-events: none;
-    user-select: none;
-    overflow: hidden;
-    position: relative;
-}
-
 
 /* --------------------- pop-up--------------------------- */
 main .over-area {
@@ -104,16 +94,11 @@ main .over-area {
     display: none;
 
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
-
-
-    /* adding more  */
-    /* justify-content: center;
-    align-items: center; */
 
 }
 

@@ -63,23 +63,22 @@ const displayAiInfo = (array) => {
 
 // console.log(singleAi)
 
-aiData();
 
 
-const handlePopup = async (id) => {
+const handlePopup = async (id, cardElement) => {
 
     const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
     // const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/02`);
     const data = await res.json();
     const PopAiData = data.data;
 
-    showPopup(PopAiData);
+    showPopup(PopAiData, cardElement);
 }
 
 
 // show popup
 
-const showPopup = (PopAiData) => {
+const showPopup = (PopAiData, cardElement) => {
 
 
     // array.forEach(allAi => {
@@ -144,12 +143,7 @@ const showPopup = (PopAiData) => {
 
     overPop.style.display = 'flex';
 
-    // const blockAll = document.getElementById('block-all');
-    // blockAll.classList = ('block');
 
-
-
-    // add more
 
     // Position the popup near the clicked card
     const cardPosition = cardElement.getBoundingClientRect();
@@ -158,9 +152,11 @@ const showPopup = (PopAiData) => {
     overPop.style.top = `${cardPosition.top + window.scrollY}px`;
     overPop.style.left = `${cardPosition.left + window.scrollX}px`;
 
-    // Add the blocked effect on the background
-    document.body.classList.add('blocked');
-
+    // const blockAll = document.getElementById('block-me');
+    // blockAll.classList.add('block');
+    
+    // console.log(blockAll)
+    
 }
 
 
@@ -176,3 +172,7 @@ const closePopup = () => {
 };
 
 
+
+
+
+aiData();
