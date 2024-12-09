@@ -30,7 +30,7 @@ const displayAiInfo = (array) => {
             const creatDiv = document.createElement('div');
 
             creatDiv.innerHTML = `
-                <div onclick="handlePopup('${singleAi.name}')"  class="card">
+                <div onclick="handlePopup('${singleAi.id}')"  class="card">
                     <div class="features">
                         <img src="${singleAi.image}"
                             alt="">
@@ -53,11 +53,11 @@ const displayAiInfo = (array) => {
 
             cardSection.appendChild(creatDiv);
 
-            
+
             // showPopup(singleAi);
-            
+
         });
-        
+
     });
 }
 
@@ -68,12 +68,12 @@ aiData();
 
 const handlePopup = async (id) => {
 
-    const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/${id}`);
-    // const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/01`);
+    const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
+    // const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/02`);
     const data = await res.json();
     const PopAiData = data.data;
 
-    showPopup (PopAiData);
+    showPopup(PopAiData);
 }
 
 
@@ -146,6 +146,21 @@ const showPopup = (PopAiData) => {
 
     // const blockAll = document.getElementById('block-all');
     // blockAll.classList = ('block');
+
+
+
+    // add more
+
+    // Position the popup near the clicked card
+    const cardPosition = cardElement.getBoundingClientRect();
+    overPop.style.display = 'flex';
+    overPop.style.position = 'absolute';
+    overPop.style.top = `${cardPosition.top + window.scrollY}px`;
+    overPop.style.left = `${cardPosition.left + window.scrollX}px`;
+
+    // Add the blocked effect on the background
+    document.body.classList.add('blocked');
+
 }
 
 

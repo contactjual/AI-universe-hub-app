@@ -15,7 +15,9 @@ button {
     margin: 20px auto;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     font-weight: 500;
     font-size: 18px;
 }
@@ -76,6 +78,17 @@ main {
 }
 
 
+/* add more  */
+
+/* Blurring the background and disabling other parts */
+body .blocked {
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+    position: relative;
+}
+
+
 /* --------------------- pop-up--------------------------- */
 main .over-area {
     width: 80%;
@@ -98,7 +111,11 @@ main .over-area {
     right: 0;
 
 
-} 
+    /* adding more  */
+    /* justify-content: center;
+    align-items: center; */
+
+}
 
 
 
@@ -132,6 +149,7 @@ main .right-card {
     padding: 20px;
     text-align: center;
 }
+
 main .right-card img {
     width: 100%;
 }
@@ -149,18 +167,23 @@ main .mini-card span {
     border-radius: 10px;
     font-size: 12px;
 }
+
 main .mini-card .basic {
     color: green;
 }
+
 main .mini-card .pro {
     color: orange;
 }
+
 main .mini-card .enterprise {
     color: tomato;
 }
+
 main .foot {
     display: flex;
 }
+
 main .foot ul {
     margin: 0 15px;
     padding: 0px;
