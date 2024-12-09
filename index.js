@@ -68,8 +68,8 @@ aiData();
 
 const handlePopup = async (id) => {
 
-    // const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/${id}`);
-    const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/01`);
+    const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/${id}`);
+    // const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/01`);
     const data = await res.json();
     const PopAiData = data.data;
 
@@ -89,9 +89,15 @@ const showPopup = (PopAiData) => {
     //         console.log(singleAi)
     //     });
 
-    // });
+    // })
 
     console.log(PopAiData);
+
+    console.log(PopAiData.features[1].feature_name);
+
+    // console.log(PopAiData.pricing[1].price)
+
+
 
 
     const overPop = document.getElementById('over-pop');
@@ -101,37 +107,35 @@ const showPopup = (PopAiData) => {
         <div class="pops">
                 <div class="pop-up">
                     <div class="left-card">
-                        <h2>ChatGPT is an AI-powered chatbot platform that uses OpenAI's GPT technology to simulate
-                            human
-                            conversation.</h2>
+                        <h2>${PopAiData.description}</h2>
                         <div class="mini-card">
-                            <span class="basic">$10/ <br> month <br> Basic</span>
-                            <span class="pro">$50/ <br> month <br> Pro</span>
-                            <span class="enterprise">Contact <br> us <br> Enterprise</span>
+                            <span class="basic">${PopAiData.pricing[0].price} <br> ${PopAiData.pricing[0].plan} </span>
+                            <span class="pro"> ${PopAiData.pricing[1].price} <br> ${PopAiData.pricing[1].plan} </span>
+                            <span class="enterprise"> ${PopAiData.pricing[2].price} <br> ${PopAiData.pricing[2].plan} </span>
                         </div>
                         <div class="foot">
                             <div class="left">
                                 <h3>Features</h3>
                                 <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
+                                    <li>${PopAiData.features[1].feature_name}</li>
+                                    <li>${PopAiData.features[2].feature_name}</li>
+                                    <li>${PopAiData.features[3].feature_name}</li>
                                 </ul>
                             </div>
                             <div class="right">
                                 <h3>Integrations</h3>
                                 <ul>
-                                    <li>FB Messenger</li>
-                                    <li>Slack</li>
-                                    <li>Telegram</li>
+                                    <li>${PopAiData.integrations[0]}</li>
+                                    <li>${PopAiData.integrations[1]}</li>
+                                    <li>${PopAiData.integrations[2]}</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="right-card">
-                        <img src="${PopAiData.image}" alt="">
-                        <h2>Hi, how are you doing today?</h2>
-                        <p>I'm doing well, thank you for asking. How can I assist you today?</p>
+                        <img src="${PopAiData.image_link[0]}" alt="">
+                        <h2>${PopAiData.input_output_examples[0].input}</h2>
+                        <p>${PopAiData.input_output_examples[0].output}</p>
                     </div>
                 </div>
             </div>
@@ -155,4 +159,5 @@ const closePopup = () => {
     // const blockAll = document.getElementById('block-all');
     // blockAll.remove.classList = ('block');
 };
+
 
